@@ -16,11 +16,6 @@ public class RegisterValidatior implements Validator {
 
 	public void validate(Object target, Errors errors) {
 		User user = (User)target;
-		/*
-		errors.rejectValue("firstname", "error_1", null, "Please Enter FirstName");
-		errors.rejectValue("lastname", "error_1", null, "Please Enter LastName");
-		errors.rejectValue("email", "error_1", null, "Please Enter Email");
-		errors.rejectValue("password", "error_1", null, "Please Enter Password");*/
 		
 		ValidationUtils.rejectIfEmpty(errors, "firstname", "error_1", "Please Enter First Name");
 		ValidationUtils.rejectIfEmpty(errors, "lastname", "error_2", "Please Enter Last Name");
