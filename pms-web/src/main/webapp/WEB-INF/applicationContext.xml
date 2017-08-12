@@ -25,22 +25,35 @@
 	
 	<!-- <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean"> -->
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
-	<property name="packagesToScan">
-		<list>
-			<value>com.artech.model</value>
-		</list>
-	</property>
-	<property name="hibernateProperties">
-		<ref bean="hibernateProperties"></ref>
-	</property>
-	<property name="dataSource">
-	<ref bean="dataSource"></ref>
-	</property>
-	</bean>
-	
+		<property name="packagesToScan">
+			<list>
+				<value>com.artech.model</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<ref bean="hibernateProperties"></ref>
+		</property>
+		<property name="dataSource">
+		<ref bean="dataSource"></ref>
+		</property>
+	</bean>	
 	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate5.HibernateTemplate">
-    <property name="sessionFactory" ref="sessionFactory" />
-    <property name="checkWriteOperations" value="false" ></property>
-  </bean>			
+	    <property name="sessionFactory" ref="sessionFactory" />
+	    <property name="checkWriteOperations" value="false" ></property>
+  </bean>	
+   		<!-- App Custom Message Properties And For Localization Config -->
+  <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+  	<property name="useCodeAsDefaultMessage" value="false"/>
+    <property name="basenames">
+      <list>
+      	<value>messages</value>               
+      </list>
+    </property>
+  </bean>
+  
+  
+ 	
+  
+
 	
 </beans>

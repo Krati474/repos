@@ -16,7 +16,7 @@ public class LoginController {
 	
 	@Autowired
 	private LoginService loginserv;
-	
+		
 	@RequestMapping(value="/login", method = RequestMethod.GET)
 	public String showLogin(Map<String, Object> map) {
 		System.out.println("inside Login Controller");
